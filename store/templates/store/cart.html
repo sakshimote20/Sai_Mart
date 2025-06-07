@@ -1,0 +1,35 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+  <h2>Your Cart</h2>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div style="color: green; margin-bottom: 10px;">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+
+  {% if cart_items %}
+    <ul>
+      {% for item in cart_items %}
+        <li>
+          {{ item.product.name }} - ₹{{ item.product.price }} x {{ item.quantity }}
+          = ₹{{ item.item_total }}
+          <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h3>Total: ₹{{ total }}</h3>
+
+    <h3>Checkout</h3>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Place Order</button>
+    </form>
+
+  {% else %}
+    <p>Your cart is empty.</p>
+  {% endif %}
+{% endblock %}

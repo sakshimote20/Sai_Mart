@@ -1,0 +1,69 @@
+# Django-specific
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+*.sqlite3
+
+# Environment variables
+.env
+.env.*
+
+# Media and static root (if generated dynamically)
+media/
+staticfiles/
+static_root/
+media_root/
+
+# VS Code settings
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.Python
+
+# Pip dependency folders
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+
+# Migrations (optional: only if generated or regenerated often)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+**/migrations/*.log
+
+# pycache (general)
+**/__pycache__/
+
+# Byte-compiled / optimized / DLL files
+*.pyd
+*.pyo
+
+# Test coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# MyPy
+.mypy_cache/
+
+# Pytest
+.pytest_cache/
+
+# Build
+build/
+dist/
+*.egg

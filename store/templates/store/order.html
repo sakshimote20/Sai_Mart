@@ -1,0 +1,23 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+  <div class="order-page">
+    <h1>Order Now</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="phone">Mobile Number:</label><br>
+        <input type="text" id="phone" name="phone" required><br><br>
+
+        <label for="items">Vegetables/Fruits to Order:</label><br>
+        <textarea id="items" name="items" rows="4" required></textarea><br><br>
+
+        <input type="submit" value="Place Order">
+    </form>
+    {% if success %}
+      <p style="color:green;">Thank you for ordering! You will receive a confirmation SMS shortly.</p>
+    {% endif %}
+  </div>
+{% endblock %}
