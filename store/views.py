@@ -83,7 +83,6 @@ def add_to_cart(request, product_id):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
-from twilio.rest import Client
 from decouple import config
 
 # View cart and place order
@@ -127,32 +126,7 @@ def view_cart(request):
             )
             send_mail(subject, message, settings.EMAIL_HOST_USER, [settings.ADMIN_EMAIL], fail_silently=False)
 
-            # Send SMS to Customer using Twilio
-            try:
-                twilio_sid = config('TWILIO_ACCOUNT_SID')
-                twilio_token = config('TWILIO_AUTH_TOKEN')
-                twilio_number = config('TWILIO_PHONE_NUMBER')
-                admin_phone = config('ADMIN_PHONE')
-
-                client = Client(twilio_sid, twilio_token)
-
-                sms_message = (
-                    f"Hello {order.name}, your order has been confirmed! "
-                    f"It will arrive in 20 minutes. Total: ₹{order.total_price}.\n\n"
-                    f"Thank you for shopping with us!\n– Sai Vegetable & Fruit Mart 🌿\n"
-                    f"For any query or delay, contact us at: {admin_phone}"
-                )
-
-                message = client.messages.create(
-                    body=sms_message,
-                    from_=twilio_number,
-                    to=f"+91{order.phone}"
-                )
-                print("Twilio SMS sent! SID:", message.sid)
-
-            except Exception as e:
-                print(" Twilio SMS failed:", str(e))
-
+            
             messages.success(request, "Order placed successfully!")
             return redirect('home')
 

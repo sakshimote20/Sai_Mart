@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sai_grocery_db',  # Change this to your database name
         'USER': 'root',  # Your MySQL username
-        'PASSWORD': 'sakshi@8097',  # Your MySQL password
+        'PASSWORD': '5124',  # Your MySQL password
         'HOST': 'localhost',
         'PORT': '3306',  # Default MySQL port
     }
