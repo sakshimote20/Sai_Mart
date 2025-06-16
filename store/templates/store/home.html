@@ -2,39 +2,41 @@
 {% extends 'store/base.html' %}
 
 {% block content %}
-    <h2>Welcome to Sai Vegetables and Fruit Mart!</h2>
-    <p>Fresh and organic veggies delivered daily at your doorstep.</p>
-
-    <h3>Special Offers:</h3>
-    <p>Buy more than 3 items and get FREE masala pack (Coriander, Chilli, Mint)!</p>
-
-    <h3>All Products:</h3>
-
-    <form method="GET" action="">
-        <input type="text" name="search" placeholder="Search products...">
-        <button type="submit">Search</button>
-    </form>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-        {% for product in products %}
-            <div style="border: 1px solid #ccc; padding: 10px; width: 250px;">
-                {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width: 100%; height: auto;">
-                {% else %}
-                    <p><i>No image available</i></p>
-                {% endif %}
-
-                <h4>{{ product.name }}</h4>
-                <p>Price: ₹{{ product.price }} / {{ product.unit }}</p>
-                <p>{{ product.description }}</p>
-
-                <form action="{% url 'add_to_cart' product.id %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Add to Cart</button>
-                </form>
-            </div>
-        {% empty %}
-            <p>No products available.</p>
-        {% endfor %}
+<div class="home-container">
+    <div class="home-section welcome-section">
+        <h2>Welcome to Sai Vegetables and Fruit Mart!</h2>
+        <p>Fresh and organic veggies delivered daily at your doorstep.</p>
     </div>
+    <div class="home-section offer-section">
+        <h3>Special Offers:</h3>
+        <p>Buy more than 3 items and get <span class="highlight-offer">FREE masala pack</span> (Coriander, Chilli, Mint)!</p>
+    </div>
+    <div class="home-section products-section">
+        <h3>All Products:</h3>
+        <form method="GET" action="" class="search-form">
+            <input type="text" name="search" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="product-list">
+            {% for product in products %}
+                <div class="product-card">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <p><i>No image available</i></p>
+                    {% endif %}
+                    <h4>{{ product.name }}</h4>
+                    <p>Price: ₹{{ product.price }} / {{ product.unit }}</p>
+                    <p>{{ product.description }}</p>
+                    <form action="{% url 'add_to_cart' product.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Add to Cart</button>
+                    </form>
+                </div>
+            {% empty %}
+                <p>No products available.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}

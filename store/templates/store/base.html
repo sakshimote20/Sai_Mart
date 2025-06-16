@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'store/css/style.css' %}">
 </head>
 <body>
-    <header>
+    <header style="position: fixed; top: 0; left: 0; width: 100%; z-index: 100;">
         <h1>🌿 Sai Vegetables and Fruit Mart 🌿</h1>
         <nav>
             <a href="{% url 'home' %}">Home</a> |
@@ -27,7 +27,7 @@
         </nav>
     </header>
 
-    <main>
+    <main style="margin-top: 110px;">
         {% block content %}
         {% endblock %}
     </main>

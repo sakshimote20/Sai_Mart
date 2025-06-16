@@ -14,7 +14,7 @@ class Product(models.Model):
         ('piece', 'Piece'),
     ], default='piece')
     image = models.ImageField(upload_to='products/', blank=True, null=True)
-    special_offer = models.BooleanField(default=False)  # To mark products with special offers
+    special_offer = models.TextField()  # To mark products with special offers
     is_available = models.BooleanField(default=True)  # ← ADD THIS
 
     def __str__(self):
