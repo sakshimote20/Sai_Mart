@@ -38,7 +38,7 @@ footer {
 .home-container {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 0;
     margin-bottom: 40px;
 }
 .home-section {
@@ -57,14 +57,28 @@ footer {
     transform: translateX(-50%);
 }
 .welcome-section {
-    background: rgba(106, 17, 203, 0.18); /* transparent purple */
+    position: relative;
+    /* No background color, only image if present */
     color: #222;
     text-align: center;
+    overflow: hidden;
+}
+.welcome-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('/static/store/images/veggie-bg.jpg') center center/cover no-repeat;
+    opacity: 0.7; /* Slightly transparent image */
+    z-index: 1;
+}
+.welcome-section h2, .welcome-section p {
+    position: relative;
+    z-index: 2;
 }
 .offer-section {
-    background: rgba(255, 179, 0, 0.13); /* transparent yellow */
-    border-left: 6px solid #ffb300;
-    color: #b8860b;
+    background: #7d5ad6;
+    border-left: 6px solid #5a3fa3;
+    color: #fff;
     text-align: center;
 }
 .products-section {
@@ -116,4 +130,13 @@ footer {
     .products-section {
         margin-top: 10px;
     }
+}
+.about-page {
+    background: #81C784; /* Light deep fresh green (from offer section) */
+    border-radius: 12px;
+    padding: 32px 24px;
+    margin: 32px auto;
+    max-width: 800px;
+    box-shadow: 0 2px 12px rgba(76, 175, 80, 0.08);
+    color: #222;
 }
