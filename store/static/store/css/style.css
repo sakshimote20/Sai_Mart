@@ -250,6 +250,156 @@ footer {
     letter-spacing: 1px;
     text-align: center;
 }
+/* Order page custom styles */
+.order-page {
+    background: #f8fff8;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(67, 160, 71, 0.13), 0 1.5px 6px rgba(37, 117, 252, 0.10);
+    max-width: 420px;
+    margin: 40px auto 60px auto;
+    padding: 36px 32px 28px 32px;
+    border: 1.5px solid #b2dfdb;
+}
+.order-page h1 {
+    color: #2575fc;
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.order-page form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.order-page label {
+    color: #388e3c;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+    font-size: 1.05rem;
+    width: 100%;
+    text-align: left;
+}
+.order-page input[type="text"], .order-page textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #b2dfdb;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    background: #f8faff;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1.5px 6px rgba(37, 117, 252, 0.07);
+    display: block;
+}
+.order-page input[type="text"]:focus, .order-page textarea:focus {
+    border: 2px solid #43A047;
+    outline: none;
+    box-shadow: 0 4px 16px rgba(67, 160, 71, 0.13);
+}
+.order-page input[type="submit"] {
+    background: linear-gradient(90deg, #43A047 0%, #2575fc 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(67, 160, 71, 0.10);
+    display: block;
+}
+.order-page input[type="submit"]:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #43A047 100%);
+    box-shadow: 0 6px 18px rgba(37, 117, 252, 0.18);
+}
+.order-page p[style*="color:green;"] {
+    color: #388e3c !important;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 18px;
+    font-size: 1.08rem;
+}
+/* Enhanced About page custom styles */
+.about-page {
+    background: linear-gradient(120deg, rgba(248,255,248,0.93) 60%, rgba(227,246,227,0.93) 60%);
+    border-radius: 22px;
+    box-shadow: 0 16px 48px rgba(67, 160, 71, 0.28), 0 4px 20px rgba(37, 117, 252, 0.18);
+    max-width: 800px;
+    margin: 48px auto 72px auto;
+    padding: 48px 40px 36px 40px;
+    border: 2px solid #b2dfdb;
+    color: #222;
+    position: relative;
+    overflow: hidden;
+}
+.about-page::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('/static/store/images/veggie-bg.jpg') center center/cover no-repeat;
+    opacity: 0.18;
+    z-index: 0;
+    pointer-events: none;
+}
+.about-page h1, .about-page h2 {
+    color: #fff;
+    background: linear-gradient(90deg, #43A047 0%, #2575fc 100%);
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    border-radius: 14px;
+    padding: 18px 0 16px 0;
+    box-shadow: 0 4px 18px rgba(67, 160, 71, 0.13), 0 1.5px 6px rgba(37, 117, 252, 0.10);
+    text-shadow: 0 2px 8px rgba(37, 117, 252, 0.13);
+}
+.about-page p, .about-page ul, .about-page li {
+    font-size: 1.13rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+}
+.about-page ul {
+    padding-left: 28px;
+    margin-bottom: 22px;
+}
+.about-page li {
+    margin-bottom: 10px;
+    list-style: disc inside;
+}
+.about-page strong, .about-page b {
+    color: #43A047;
+    font-weight: 700;
+}
+.about-page .about-highlight {
+    background: linear-gradient(90deg, #e3f6e3 60%, #f8fff8 100%);
+    border-radius: 8px;
+    padding: 6px 12px;
+    color: #2575fc;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+.about-page hr {
+    border: none;
+    border-top: 2px solid #b2dfdb;
+    margin: 28px 0;
+}
 @media (max-width: 700px) {
     .home-section {
         padding: 18px 0;
@@ -260,13 +410,11 @@ footer {
     .products-section {
         margin-top: 10px;
     }
-}
-.about-page {
-    background: #81C784; /* Light deep fresh green (from offer section) */
-    border-radius: 12px;
-    padding: 32px 24px;
-    margin: 32px auto;
-    max-width: 800px;
-    box-shadow: 0 2px 12px rgba(76, 175, 80, 0.08);
-    color: #222;
+    .about-page {
+        padding: 18px 8px;
+        max-width: 98vw;
+    }
+    .about-page h1, .about-page h2 {
+        font-size: 1.3rem;
+    }
 }
