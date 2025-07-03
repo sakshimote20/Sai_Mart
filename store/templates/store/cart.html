@@ -1,35 +1,45 @@
 {% extends 'store/base.html' %}
 
 {% block content %}
-  <h2>Your Cart</h2>
+  <div class="cart-page">
+    <h2 class="cart-title cart-title-gradient">Your Cart</h2>
 
-  {% if messages %}
-    {% for message in messages %}
-      <div style="color: green; margin-bottom: 10px;">{{ message }}</div>
-    {% endfor %}
-  {% endif %}
-
-  {% if cart_items %}
-    <ul>
-      {% for item in cart_items %}
-        <li>
-          {{ item.product.name }} - ₹{{ item.product.price }} x {{ item.quantity }}
-          = ₹{{ item.item_total }}
-          <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
-        </li>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="cart-message">{{ message }}</div>
       {% endfor %}
-    </ul>
+    {% endif %}
 
-    <h3>Total: ₹{{ total }}</h3>
+    {% if cart_items %}
+      <ul class="cart-list">
+        {% for item in cart_items %}
+          <li class="cart-item">
+            <span class="cart-product">{{ item.product.name }}</span>
+            <span class="cart-price">₹{{ item.product.price }}</span>
+            <span class="cart-mult">x {{ item.quantity }}</span>
+            <span class="cart-total">= ₹{{ item.item_total }}</span>
+            <a class="cart-remove" href="{% url 'remove_from_cart' item.id %}">Remove</a>
+          </li>
+        {% endfor %}
+      </ul>
 
-    <h3>Checkout</h3>
-    <form method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Place Order</button>
-    </form>
+      <h3 class="cart-grand-total">Total: ₹{{ total }}</h3>
 
-  {% else %}
-    <p>Your cart is empty.</p>
-  {% endif %}
+      <h3 class="cart-checkout-title">Checkout</h3>
+      <div class="cart-checkout-box">
+        <form method="POST" class="cart-checkout-form">
+          {% csrf_token %}
+          <div class="checkout-fields-column">
+            <div class="checkout-field checkout-field-no-border">{{ form.name.label_tag }}{{ form.name }}</div>
+            <div class="checkout-field checkout-field-no-border">{{ form.address.label_tag }}{{ form.address }}</div>
+            <div class="checkout-field checkout-field-no-border">{{ form.phone.label_tag }}{{ form.phone }}</div>
+          </div>
+          <button type="submit" class="cart-checkout-btn">Place Order</button>
+        </form>
+      </div>
+
+    {% else %}
+      <p class="cart-empty">Your cart is empty.</p>
+    {% endif %}
+  </div>
 {% endblock %}

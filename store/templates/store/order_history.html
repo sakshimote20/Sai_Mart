@@ -1,24 +1,26 @@
 {% extends 'store/base.html' %}
 {% block content %}
-<h2>My Orders</h2>
-{% if orders %}
-  <ul>
-    {% for order in orders %}
-      <li>
-        <strong>Order #{{ order.id }}</strong><br>
-        Date: {{ order.order_date }}<br>
-        Total: ₹{{ order.total_price }}<br>
-        Status: {{ order.status }}
-        <ul>
-          {% for item in order.items.all %}
-            <li>{{ item.quantity }} x {{ item.product.name }} @ ₹{{ item.price }}</li>
-          {% endfor %}
-        </ul>
-        <hr>
-      </li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>You have not placed any orders yet.</p>
-{% endif %}
+<div class="order-history-container">
+  <h2 class="order-history-title">My Orders</h2>
+  {% if orders %}
+    <ul class="order-history-list">
+      {% for order in orders %}
+        <li class="order-history-card">
+          <strong>Order #{{ order.id }}</strong><br>
+          <div class="order-history-meta">Date: {{ order.order_date }}</div>
+          <div class="order-history-meta">Total: ₹{{ order.total_price }}</div>
+          <div class="order-history-status">Status: {{ order.status }}</div>
+          <ul class="order-history-items">
+            {% for item in order.items.all %}
+              <li>{{ item.quantity }} x {{ item.product.name }} @ ₹{{ item.price }}</li>
+            {% endfor %}
+          </ul>
+          <hr>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="order-history-empty">You have not placed any orders yet.</p>
+  {% endif %}
+</div>
 {% endblock %}
