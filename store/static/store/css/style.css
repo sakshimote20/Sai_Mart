@@ -895,6 +895,179 @@ footer {
   font-size: 1.1rem;
   margin-top: 24px;
 }
+/* Centered Login Page Box Styling */
+.login-center-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0fff0;
+}
+.login-box {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(67, 160, 71, 0.13), 0 1.5px 6px rgba(37, 117, 252, 0.10);
+  max-width: 400px;
+  width: 100%;
+  padding: 38px 32px 28px 32px;
+  border: 1.5px solid #b2dfdb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-title-gradient {
+  color: #fff !important;
+  background: linear-gradient(90deg, #43A047 0%, #2575fc 100%);
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 14px;
+  padding: 16px 0 14px 0;
+  width: 100%;
+  box-shadow: 0 4px 18px rgba(67, 160, 71, 0.13), 0 1.5px 6px rgba(37, 117, 252, 0.10);
+  text-shadow: 0 2px 8px rgba(37, 117, 252, 0.13);
+  text-transform: uppercase;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+.login-form p {
+  margin-bottom: 0;
+}
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 2px solid #b2dfdb;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  background: #f8faff;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1.5px 6px rgba(37, 117, 252, 0.07);
+  display: block;
+}
+.login-btn {
+  background: linear-gradient(90deg, #43A047 0%, #2575fc 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(67, 160, 71, 0.10);
+  display: block;
+}
+.login-btn:hover {
+  background: linear-gradient(90deg, #2575fc 0%, #43A047 100%);
+  box-shadow: 0 6px 18px rgba(37, 117, 252, 0.18);
+}
+.login-error {
+  color: #e53935;
+  background: #ffe3e3;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+/* Centered Register Page Box Styling */
+.register-center-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0fff0;
+}
+.register-box {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(67, 160, 71, 0.13), 0 1.5px 6px rgba(37, 117, 252, 0.10);
+  max-width: 400px;
+  width: 100%;
+  padding: 38px 32px 28px 32px;
+  border: 1.5px solid #b2dfdb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register-title-gradient {
+  color: #fff !important;
+  background: linear-gradient(90deg, #43A047 0%, #2575fc 100%);
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 14px;
+  padding: 16px 0 14px 0;
+  width: 100%;
+  box-shadow: 0 4px 18px rgba(67, 160, 71, 0.13), 0 1.5px 6px rgba(37, 117, 252, 0.10);
+  text-shadow: 0 2px 8px rgba(37, 117, 252, 0.13);
+  text-transform: uppercase;
+}
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+.register-form p {
+  margin-bottom: 0;
+}
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="email"] {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 2px solid #b2dfdb;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  background: #f8faff;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1.5px 6px rgba(37, 117, 252, 0.07);
+  display: block;
+}
+.register-form input[type="text"]:focus,
+.register-form input[type="password"]:focus,
+.register-form input[type="email"]:focus {
+  border: 2px solid #43A047;
+  outline: none;
+  box-shadow: 0 4px 16px rgba(67, 160, 71, 0.13);
+}
+.register-btn {
+  background: linear-gradient(90deg, #43A047 0%, #2575fc 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(67, 160, 71, 0.10);
+  display: block;
+}
+.register-btn:hover {
+  background: linear-gradient(90deg, #2575fc 0%, #43A047 100%);
+  box-shadow: 0 6px 18px rgba(37, 117, 252, 0.18);
+}
 @media (max-width: 900px) {
     .checkout-inline-form .checkout-fields-row {
         flex-direction: column;
